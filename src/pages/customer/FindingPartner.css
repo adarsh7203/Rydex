@@ -1,0 +1,217 @@
+/* ═══════════════════════════════════════════
+   FindingPartner.css — Finding Partner Screen
+   ═══════════════════════════════════════════ */
+
+.fp-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--green-darker) 0%, var(--green-dark) 60%, #1e7a40 100%);
+  padding: 32px;
+}
+
+.fp-content {
+  text-align: center;
+  max-width: 520px;
+  width: 100%;
+}
+
+/* Radar animation */
+.fp-radar {
+  position: relative;
+  width: 192px;
+  height: 192px;
+  margin: 0 auto 40px;
+}
+
+.fp-radar__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(59, 170, 103, 0.12);
+  animation: ping 2s ease-out infinite;
+}
+
+.fp-radar__ring:nth-child(2) { animation-delay: 0.5s; }
+.fp-radar__ring:nth-child(3) { animation-delay: 1s; }
+
+.fp-radar__center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fp-radar__core {
+  width: 112px;
+  height: 112px;
+  background: var(--green-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 48px rgba(59, 170, 103, 0.5);
+}
+
+.fp-radar__vehicle {
+  position: absolute;
+  top: 8px; right: 24px;
+  width: 48px; height: 48px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+/* Title & desc */
+.fp-title {
+  font-size: 32px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.fp-desc {
+  font-size: 15px;
+  color: #86EFAC;
+  margin-bottom: 40px;
+  min-height: 24px;
+}
+
+/* Stage checklist */
+.fp-stages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.fp-stage {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-radius: 18px;
+  transition: all 0.3s;
+}
+
+.fp-stage--active { background: rgba(255, 255, 255, 0.15); }
+.fp-stage--done   { background: rgba(255, 255, 255, 0.15); }
+.fp-stage--wait   { background: rgba(255, 255, 255, 0.05); }
+
+.fp-stage__dot {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.fp-stage__dot--done   { background: #4ade80; }
+.fp-stage__dot--active { background: var(--green-primary); animation: pulseDot 1.5s ease-in-out infinite; }
+.fp-stage__dot--wait   { background: rgba(255,255,255,0.2); }
+
+.fp-stage__label {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.fp-stage__label--active,
+.fp-stage__label--done { color: white; }
+.fp-stage__label--wait { color: #86EFAC; }
+
+/* Loader in stage */
+.fp-stage__loader {
+  margin-left: auto;
+  width: 20px; height: 20px;
+  border: 3px solid rgba(255,255,255,0.2);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  animation: spinRing 0.9s linear infinite;
+}
+
+/* Partner found card */
+.fp-partner-found {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+}
+
+.fp-partner-found__avatar {
+  width: 56px; height: 56px;
+  background: var(--green-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  color: white;
+  font-size: 22px;
+  box-shadow: 0 4px 16px rgba(59,170,103,0.4);
+  flex-shrink: 0;
+}
+
+.fp-partner-found__name {
+  font-weight: 900;
+  color: white;
+  font-size: 18px;
+}
+
+.fp-partner-found__loc {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #86EFAC;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+@media (max-width: 640px) {
+  .fp-shell {
+    padding: 24px 16px;
+  }
+  .fp-radar {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 24px;
+  }
+  .fp-radar__core {
+    width: 80px;
+    height: 80px;
+  }
+  .fp-radar__vehicle {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+  .fp-title {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  .fp-desc {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+  .fp-stages {
+    margin-bottom: 24px;
+    gap: 8px;
+  }
+  .fp-stage {
+    padding: 12px 14px;
+  }
+  .fp-stage__label {
+    font-size: 13px;
+  }
+}

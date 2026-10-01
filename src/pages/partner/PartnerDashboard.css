@@ -1,0 +1,499 @@
+/* ═══════════════════════════════════════════
+   PartnerDashboard.css — Partner Dashboard Styles
+   ═══════════════════════════════════════════ */
+
+.pd-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Header */
+.pd-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pd-header-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.pd-greeting {
+  font-size: 13px;
+  color: #64748B;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+}
+
+.pd-name {
+  font-size: 28px;
+  font-weight: 900;
+  color: #0F172A;
+  margin: 0 0 4px 0;
+}
+
+.pd-meta {
+  font-size: 13px;
+  color: #475569;
+  font-weight: 500;
+}
+
+/* Availability Toggle Box */
+.pd-toggle-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 14px 22px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.pd-toggle-info h4 {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 2px 0;
+}
+
+.pd-toggle-info p {
+  font-size: 11px;
+  color: #64748B;
+  margin: 0;
+}
+
+.pd-toggle-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pd-status-text {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.pd-status-text.online {
+  color: #16A34A;
+}
+
+.pd-status-text.offline {
+  color: #94A3B8;
+}
+
+.pd-switch {
+  width: 50px;
+  height: 28px;
+  border-radius: 9999px;
+  padding: 3px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+  display: flex;
+  align-items: center;
+}
+
+.pd-switch-thumb {
+  width: 22px;
+  height: 22px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Metrics Row */
+.pd-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.pd-metric-card {
+  background: #FFFFFF;
+  border-radius: 18px;
+  padding: 20px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pd-metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+}
+
+.pd-metric-stripe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.pd-metric-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.pd-metric-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 6px 0;
+}
+
+.pd-metric-val {
+  font-size: 26px;
+  font-weight: 900;
+  color: #0F172A;
+  margin: 0 0 4px 0;
+  line-height: 1.1;
+}
+
+.pd-metric-sub {
+  font-size: 12px;
+  color: #94A3B8;
+  margin: 0;
+}
+
+.pd-metric-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Main Content Grid */
+.pd-content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.pd-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pd-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Incoming Request Card */
+.pd-incoming-card {
+  background: linear-gradient(135deg, #072714 0%, #0F4928 60%, #166534 100%);
+  border-radius: 20px;
+  padding: 26px;
+  color: #FFFFFF;
+  box-shadow: 0 10px 25px -5px rgba(15, 73, 40, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.pd-incoming-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pd-incoming-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #22C55E;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  letter-spacing: 0.5px;
+}
+
+.pd-incoming-title {
+  font-size: 20px;
+  font-weight: 900;
+  margin: 0 0 2px 0;
+}
+
+.pd-incoming-sub {
+  font-size: 13px;
+  color: #86EFAC;
+  margin: 0;
+}
+
+/* Specs pills inside request */
+.pd-incoming-specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.pd-incoming-pill {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.pd-pill-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #A7F3D0;
+  margin-bottom: 4px;
+}
+
+.pd-pill-val {
+  font-size: 13px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.pd-verified-box {
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(134, 239, 172, 0.3);
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  color: #DCFCE7;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.pd-actions-row {
+  display: flex;
+  gap: 12px;
+}
+
+.pd-btn-decline {
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #FCA5A5;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pd-btn-decline:hover {
+  background: rgba(239, 68, 68, 0.3);
+  color: #FFFFFF;
+}
+
+.pd-btn-accept {
+  flex: 1;
+  padding: 14px 24px;
+  border-radius: 12px;
+  background: #22C55E;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 900;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(34, 197, 94, 0.4);
+  transition: all 0.2s ease;
+}
+
+.pd-btn-accept:hover {
+  background: #16A34A;
+  transform: translateY(-1px);
+}
+
+/* Offline state card */
+.pd-offline-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  border: 1px solid #E2E8F0;
+}
+
+.pd-offline-icon {
+  width: 56px;
+  height: 56px;
+  background: #F1F5F9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  color: #94A3B8;
+}
+
+/* Map Card */
+.pd-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 22px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.pd-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.pd-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0;
+}
+
+/* Battery Slot Grid */
+.pd-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.pd-slot-tile {
+  border-radius: 12px;
+  padding: 12px 8px;
+  text-align: center;
+  border: 1.5px solid transparent;
+}
+
+.pd-slot-tile.full {
+  background: #ECFDF5;
+  border-color: #86EFAC;
+  color: #15803D;
+}
+
+.pd-slot-tile.empty {
+  background: #F8FAFC;
+  border-color: #E2E8F0;
+  color: #94A3B8;
+  border-style: dashed;
+}
+
+.pd-slot-tile.used {
+  background: #FFFBEB;
+  border-color: #FCD34D;
+  color: #B45309;
+}
+
+.pd-slot-id {
+  font-size: 11px;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+
+.pd-slot-icon {
+  font-size: 18px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.pd-slot-status {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+/* Today's Performance Breakdown */
+.pd-perf-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: #F8FAFC;
+  border-radius: 10px;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.pd-perf-item span:first-child {
+  color: #64748B;
+}
+
+.pd-perf-item span:last-child {
+  font-weight: 800;
+  color: #0F172A;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .pd-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pd-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .pd-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .pd-incoming-card {
+    padding: 20px 16px;
+  }
+  .pd-card {
+    padding: 18px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pd-metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .pd-metric-card {
+    padding: 16px;
+  }
+  .pd-name {
+    font-size: 24px;
+  }
+  .pd-incoming-specs {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .pd-actions-row {
+    flex-direction: column;
+  }
+  .pd-btn-decline {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,220 @@
+/* ═══════════════════════════════════════════
+   SwapComplete.css — Swap Completion Page
+   ═══════════════════════════════════════════ */
+
+.sc-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+  max-width: 960px;
+}
+
+.sc-left  { display: flex; flex-direction: column; gap: 20px; }
+.sc-right { display: flex; flex-direction: column; gap: 20px; }
+
+/* Success hero */
+.sc-hero-icon {
+  width: 80px; height: 80px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.sc-hero-title {
+  font-size: 32px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.sc-hero-sub {
+  color: #86EFAC;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Receipt card */
+.sc-receipt-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px dashed var(--gray-border);
+}
+
+.sc-receipt-header__left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sc-receipt-icon {
+  width: 40px; height: 40px;
+  background: var(--green-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sc-receipt-title {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 15px;
+}
+
+.sc-receipt-id {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Receipt rows grid */
+.sc-receipt-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 32px;
+}
+
+.sc-receipt-field__label {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sc-receipt-field__value {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Action buttons */
+.sc-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* Rating card */
+.sc-rating-card { text-align: center; }
+
+.sc-rating-avatar {
+  width: 64px; height: 64px;
+  background: var(--green-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  color: white;
+  font-size: 26px;
+  margin: 0 auto 12px;
+  box-shadow: 0 4px 16px rgba(59,170,103,0.3);
+}
+
+.sc-rating-name {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.sc-rating-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.sc-stars {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.sc-star-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: transform 0.15s;
+}
+.sc-star-btn:hover { transform: scale(1.25); }
+
+.sc-rating-prompt {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Rated confirmation */
+.sc-rated {
+  border-radius: 20px;
+  padding: 28px;
+  background: var(--green-light);
+  border: 2px solid #BBF7D0;
+  text-align: center;
+}
+
+.sc-rated__emoji { font-size: 36px; margin-bottom: 8px; }
+.sc-rated__title { font-weight: 700; color: #166534; font-size: 15px; }
+.sc-rated__sub   { font-size: 13px; color: #15803D; margin-top: 4px; }
+
+/* Summary tiles */
+.sc-summary-tiles { display: flex; flex-direction: column; gap: 8px; }
+
+.sc-summary-tile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--gray-card);
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.sc-summary-tile__left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sc-summary-tile__emoji { font-size: 18px; }
+.sc-summary-tile__label { font-size: 13px; color: var(--text-secondary); }
+.sc-summary-tile__value { font-size: 13px; font-weight: 700; color: var(--text-primary); }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .sc-grid { grid-template-columns: 1fr; max-width: 100%; }
+  .sc-actions { flex-wrap: wrap; }
+}
+
+@media (max-width: 768px) {
+  .sc-grid {
+    gap: 20px;
+  }
+  .sc-actions {
+    flex-direction: column;
+  }
+  .sc-hero-title {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sc-receipt-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .sc-hero-title {
+    font-size: 22px;
+  }
+  .sc-hero-sub {
+    font-size: 14px;
+  }
+}

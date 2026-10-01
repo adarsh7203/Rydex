@@ -1,0 +1,293 @@
+/* ═══════════════════════════════════════════
+   BatteryExchange.css — Partner Battery Swap Protocol
+   ═══════════════════════════════════════════ */
+
+.bex-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Stepper Header */
+.bex-stepper-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #FFFFFF;
+  padding: 18px 24px;
+  border-radius: 18px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.bex-back-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+  background: #F8FAFC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bex-stepper-content {
+  flex: 1;
+}
+
+.bex-stepper-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.bex-stepper-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.bex-otp-verified-badge {
+  font-size: 11px;
+  font-weight: 800;
+  color: #15803D;
+  background: #DCFCE7;
+  border: 1px solid #BBF7D0;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.bex-step-bars {
+  display: flex;
+  gap: 8px;
+}
+
+.bex-step-bar {
+  flex: 1;
+  height: 6px;
+  border-radius: 9999px;
+  background: #E2E8F0;
+  transition: all 0.3s ease;
+}
+
+.bex-step-bar.done { background: #22C55E; }
+.bex-step-bar.active { background: #16A34A; box-shadow: 0 0 8px rgba(34, 197, 94, 0.4); }
+
+/* 2-Column Grid */
+.bex-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.bex-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 26px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.bex-step-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.bex-step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: #22C55E;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 14px;
+}
+
+.bex-step-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0;
+}
+
+/* Compare specs cards */
+.bex-compare-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.bex-compare-box {
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.bex-compare-box.needed {
+  background: #EFF6FF;
+  border: 1.5px solid #BFDBFE;
+}
+
+.bex-compare-box.have {
+  background: #F0FDF4;
+  border: 1.5px solid #BBF7D0;
+}
+
+.bex-compare-label {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 12px 0;
+}
+
+.bex-compare-label.needed { color: #1D4ED8; }
+.bex-compare-label.have { color: #15803D; }
+
+.bex-spec-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.bex-spec-item span:first-child { color: #64748B; }
+.bex-spec-item span:last-child { font-weight: 700; color: #0F172A; }
+
+/* Interactive Swap Tiles */
+.bex-swap-tiles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.bex-swap-tile {
+  border-radius: 16px;
+  padding: 20px;
+  border: 2px solid #E2E8F0;
+  background: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bex-swap-tile:hover {
+  transform: translateY(-2px);
+  border-color: #A7F3D0;
+}
+
+.bex-swap-tile.done-give {
+  border-color: #22C55E;
+  background: #F0FDF4;
+}
+
+.bex-swap-tile.done-collect {
+  border-color: #F59E0B;
+  background: #FEF3C7;
+}
+
+.bex-tile-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.bex-tile-check {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.bex-tile-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 2px 0;
+}
+
+.bex-tile-sub {
+  font-size: 12px;
+  color: #64748B;
+  margin: 0;
+}
+
+/* Proceed Button */
+.bex-proceed-btn {
+  width: 100%;
+  height: 50px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+  color: white;
+  border: none;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.35);
+  transition: all 0.2s ease;
+}
+
+.bex-proceed-btn:hover {
+  background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 1024px) {
+  .bex-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .bex-stepper-header {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+  .bex-card {
+    padding: 20px 16px;
+  }
+  .bex-compare-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .bex-swap-tiles-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bex-card {
+    padding: 16px 14px;
+  }
+  .bex-step-title {
+    font-size: 16px;
+  }
+  .bex-compare-box {
+    padding: 14px;
+  }
+  .bex-swap-tile {
+    padding: 16px 14px;
+  }
+}

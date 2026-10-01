@@ -1,0 +1,290 @@
+/* ═══════════════════════════════════════════
+   PartnerNavigation.css — Turn-by-Turn Partner Navigation
+   ═══════════════════════════════════════════ */
+
+.pnav-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pnav-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.pnav-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pnav-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Map Screen */
+.pnav-map-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  position: relative;
+}
+
+.pnav-map-container {
+  height: 400px;
+  width: 100%;
+}
+
+.pnav-map-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+  border: 1px solid #E2E8F0;
+}
+
+.pnav-map-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22C55E;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.3);
+  animation: pulseDot 1.5s infinite;
+}
+
+.pnav-map-badge span {
+  font-size: 11px;
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: 0.5px;
+}
+
+.pnav-eta-chip {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #0F172A;
+  color: #FFFFFF;
+  border-radius: 14px;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+.pnav-eta-time {
+  font-size: 20px;
+  font-weight: 900;
+  color: #4ADE80;
+  line-height: 1;
+}
+
+.pnav-eta-label {
+  font-size: 11px;
+  color: #94A3B8;
+  font-weight: 600;
+}
+
+/* Customer card */
+.pnav-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.pnav-customer-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.pnav-customer-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: #EFF6FF;
+  border: 1.5px solid #BFDBFE;
+  color: #2563EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.pnav-customer-info {
+  flex: 1;
+}
+
+.pnav-customer-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 2px 0;
+}
+
+.pnav-customer-phone {
+  font-size: 13px;
+  color: #64748B;
+  margin: 0 0 4px 0;
+}
+
+.pnav-customer-loc {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #166534;
+  font-weight: 600;
+}
+
+.pnav-call-btn {
+  width: 44px;
+  height: 44px;
+  background: #F0FDF4;
+  border: 1.5px solid #BBF7D0;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #16A34A;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pnav-call-btn:hover {
+  background: #DCFCE7;
+  transform: translateY(-1px);
+}
+
+/* Countdown Card */
+.pnav-countdown-card {
+  background: linear-gradient(135deg, #072714 0%, #0F4928 60%, #166534 100%);
+  border-radius: 20px;
+  padding: 28px 20px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 10px 25px -5px rgba(15, 73, 40, 0.35);
+}
+
+.pnav-countdown-val {
+  font-size: 48px;
+  font-weight: 900;
+  color: #FFFFFF;
+  margin: 8px 0 2px 0;
+  letter-spacing: -1px;
+}
+
+.pnav-speed-badges {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.pnav-speed-pill {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 8px 16px;
+}
+
+.pnav-speed-pill p:first-child {
+  font-size: 16px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.pnav-speed-pill p:last-child {
+  font-size: 11px;
+  color: #A7F3D0;
+  margin: 0;
+}
+
+/* Arrived CTA Button */
+.pnav-arrived-btn {
+  width: 100%;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+  transition: all 0.2s ease;
+}
+
+.pnav-arrived-btn:hover {
+  background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 1024px) {
+  .pnav-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .pnav-map-container {
+    height: 300px;
+  }
+  .pnav-card {
+    padding: 20px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pnav-map-container {
+    height: 250px;
+  }
+  .pnav-card {
+    padding: 16px 14px;
+  }
+  .pnav-eta-chip {
+    padding: 6px 12px;
+    gap: 8px;
+  }
+  .pnav-eta-time {
+    font-size: 16px;
+  }
+  .pnav-customer-row {
+    gap: 12px;
+  }
+  .pnav-customer-avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+  .pnav-customer-name {
+    font-size: 16px;
+  }
+  .pnav-countdown-val {
+    font-size: 34px;
+  }
+}

@@ -1,0 +1,217 @@
+/* ═══════════════════════════════════════════
+   PartnerStorage.css — Partner Battery Storage & Dock
+   ═══════════════════════════════════════════ */
+
+.pstore-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pstore-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pstore-title-group h2 {
+  font-size: 26px;
+  font-weight: 900;
+  color: #0F172A;
+  margin: 0 0 4px 0;
+}
+
+.pstore-title-group p {
+  font-size: 13px;
+  color: #64748B;
+  margin: 0;
+}
+
+/* Metrics Row */
+.pstore-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.pstore-metric-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 18px 20px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.pstore-metric-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.pstore-metric-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pstore-metric-val {
+  font-size: 24px;
+  font-weight: 900;
+  color: #0F172A;
+  margin: 0 0 2px 0;
+}
+
+.pstore-metric-lbl {
+  font-size: 12px;
+  color: #64748B;
+  margin: 0;
+}
+
+/* Dock Grid: 6 Slots Detailed */
+.pstore-dock-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.pstore-slot-card {
+  background: #FFFFFF;
+  border-radius: 18px;
+  padding: 22px;
+  border: 2px solid #E2E8F0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease;
+}
+
+.pstore-slot-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.pstore-slot-card.charged {
+  border-color: #86EFAC;
+}
+
+.pstore-slot-card.discharged {
+  border-color: #FCD34D;
+}
+
+.pstore-slot-card.empty {
+  border-color: #CBD5E1;
+  border-style: dashed;
+}
+
+.pstore-slot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.pstore-slot-id {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+.pstore-slot-badge {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.pstore-slot-badge.charged {
+  background: #DCFCE7;
+  color: #15803D;
+}
+
+.pstore-slot-badge.discharged {
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+.pstore-slot-badge.empty {
+  background: #F1F5F9;
+  color: #64748B;
+}
+
+.pstore-soc-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.pstore-soc-val {
+  font-size: 24px;
+  font-weight: 900;
+  color: #0F172A;
+}
+
+.pstore-soc-bar-bg {
+  height: 8px;
+  background: #F1F5F9;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.pstore-soc-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+.pstore-slot-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #64748B;
+  padding-top: 10px;
+  border-top: 1px solid #F1F5F9;
+}
+
+@media (max-width: 1024px) {
+  .pstore-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pstore-dock-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .pstore-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .pstore-dock-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .pstore-slot-card {
+    padding: 18px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pstore-metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .pstore-metric-card {
+    padding: 14px 16px;
+  }
+  .pstore-title-group h2 {
+    font-size: 22px;
+  }
+}

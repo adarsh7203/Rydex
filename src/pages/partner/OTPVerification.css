@@ -1,0 +1,212 @@
+/* ═══════════════════════════════════════════
+   OTPVerification.css — OTP Verification Screen
+   ═══════════════════════════════════════════ */
+
+.otp-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #051A0E 0%, #0A321C 40%, #0F4928 75%, #166534 100%);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.otp-glow-orb {
+  position: absolute;
+  top: -120px;
+  right: -80px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.15) 0%, rgba(74, 222, 128, 0) 70%);
+  pointer-events: none;
+}
+
+.otp-container {
+  max-width: 440px;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.otp-card {
+  background: #FFFFFF;
+  border-radius: 24px;
+  padding: 36px 32px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+
+.otp-icon-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  transition: all 0.3s ease;
+}
+
+.otp-icon-wrap.idle {
+  background: #F0FDF4;
+  color: #16A34A;
+  border: 2px solid #BBF7D0;
+}
+
+.otp-icon-wrap.success {
+  background: #DCFCE7;
+  color: #15803D;
+  border: 2px solid #86EFAC;
+  animation: pulseSuccess 1.5s infinite;
+}
+
+.otp-icon-wrap.error {
+  background: #FEE2E2;
+  color: #DC2626;
+  border: 2px solid #FECACA;
+  animation: shake 0.4s ease;
+}
+
+.otp-title {
+  font-size: 24px;
+  font-weight: 900;
+  color: #0F172A;
+  margin: 0 0 6px 0;
+}
+
+.otp-sub {
+  font-size: 13px;
+  color: #64748B;
+  margin: 0 0 26px 0;
+  line-height: 1.4;
+}
+
+/* 4 Digits */
+.otp-boxes-grid {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.otp-digit-input {
+  width: 58px;
+  height: 68px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 900;
+  color: #0F172A;
+  background: #F8FAFC;
+  border: 2px solid #E2E8F0;
+  border-radius: 16px;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.otp-digit-input:focus {
+  border-color: #22C55E;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15);
+}
+
+.otp-digit-input.ok {
+  border-color: #22C55E;
+  background: #F0FDF4;
+  color: #15803D;
+}
+
+.otp-digit-input.err {
+  border-color: #EF4444;
+  background: #FEF2F2;
+  color: #DC2626;
+}
+
+/* Demo Badge */
+.otp-demo-pill {
+  background: #FEF3C7;
+  border: 1px solid #FCD34D;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-bottom: 22px;
+  font-size: 13px;
+  color: #92400E;
+  font-weight: 600;
+}
+
+.otp-demo-code {
+  font-weight: 900;
+  color: #78350F;
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-left: 4px;
+}
+
+/* Verify Button */
+.otp-submit-btn {
+  width: 100%;
+  height: 50px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+  color: white;
+  border: none;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 8px 20px -4px rgba(34, 197, 94, 0.35);
+  transition: all 0.2s ease;
+}
+
+.otp-submit-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
+  transform: translateY(-1px);
+}
+
+.otp-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes pulseSuccess {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+@media (max-width: 480px) {
+  .otp-wrapper {
+    padding: 16px;
+  }
+  .otp-card {
+    padding: 24px 16px;
+  }
+  .otp-title {
+    font-size: 20px;
+  }
+  .otp-sub {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  .otp-boxes-grid {
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+  .otp-digit-input {
+    width: 48px;
+    height: 56px;
+    font-size: 22px;
+    border-radius: 12px;
+  }
+}

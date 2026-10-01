@@ -1,0 +1,262 @@
+/* ═══════════════════════════════════════════
+   CustomerHistory.css — Swap History & Invoices
+   ═══════════════════════════════════════════ */
+
+.chist-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.chist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chist-title-group h2 {
+  font-size: 26px;
+  font-weight: 900;
+  color: #0F172A;
+  margin: 0 0 4px 0;
+}
+
+.chist-title-group p {
+  font-size: 13px;
+  color: #64748B;
+  margin: 0;
+}
+
+.chist-export-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chist-export-btn:hover {
+  background: #F8FAFC;
+  border-color: #CBD5E1;
+}
+
+/* ── Metrics Row ── */
+.chist-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.chist-metric-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.chist-metric-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.chist-metric-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chist-metric-val {
+  font-size: 24px;
+  font-weight: 900;
+  color: #0F172A;
+  margin: 0 0 2px 0;
+}
+
+.chist-metric-lbl {
+  font-size: 12px;
+  color: #64748B;
+  margin: 0;
+}
+
+/* ── Filter Bar ── */
+.chist-filter-bar {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid #E2E8F0;
+  padding-bottom: 14px;
+}
+
+.chist-tab {
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  background: transparent;
+  color: #64748B;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chist-tab:hover {
+  background: #F1F5F9;
+  color: #0F172A;
+}
+
+.chist-tab.active {
+  background: #DCFCE7;
+  color: #15803D;
+}
+
+/* ── Table Card ── */
+.chist-table-card {
+  background: #FFFFFF;
+  border-radius: 18px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.chist-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.chist-table th {
+  background: #F8FAFC;
+  padding: 14px 20px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.chist-table td {
+  padding: 16px 20px;
+  font-size: 13px;
+  color: #334155;
+  border-bottom: 1px solid #F1F5F9;
+  vertical-align: middle;
+}
+
+.chist-table tr:hover td {
+  background: #F8FAFC;
+}
+
+.chist-table tr:last-child td {
+  border-bottom: none;
+}
+
+.chist-id-cell {
+  font-family: monospace;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+.chist-partner-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chist-partner-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #22C55E;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.chist-badge-completed {
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 800;
+  background: #DCFCE7;
+  color: #15803D;
+  border: 1px solid #BBF7D0;
+}
+
+.chist-action-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chist-action-btn:hover {
+  background: #E2E8F0;
+  color: #0F172A;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .chist-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .chist-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+  .chist-export-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .chist-filter-bar {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+  }
+  .chist-tab {
+    white-space: nowrap;
+  }
+  .chist-table-card {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 480px) {
+  .chist-metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .chist-metric-card {
+    padding: 14px 16px;
+  }
+  .chist-title-group h2 {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,510 @@
+/* ═══════════════════════════════════════════
+   RequestBattery.css — Multi-Step Battery Flow
+   ═══════════════════════════════════════════ */
+
+.rb-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Stepper Navigation ── */
+.rb-stepper-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #FFFFFF;
+  padding: 18px 24px;
+  border-radius: 18px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.rb-back-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+  background: #F8FAFC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.rb-back-btn:hover {
+  background: #E2E8F0;
+  color: #0F172A;
+}
+
+.rb-stepper-content {
+  flex: 1;
+}
+
+.rb-stepper-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.rb-stepper-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.rb-stepper-percentage {
+  font-size: 12px;
+  font-weight: 800;
+  color: #16A34A;
+  background: #DCFCE7;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.rb-step-bars {
+  display: flex;
+  gap: 8px;
+}
+
+.rb-step-bar {
+  flex: 1;
+  height: 6px;
+  border-radius: 9999px;
+  background: #E2E8F0;
+  transition: all 0.3s ease;
+}
+
+.rb-step-bar.done {
+  background: #22C55E;
+}
+
+.rb-step-bar.active {
+  background: #16A34A;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.4);
+}
+
+/* ── Main Layout Grid ── */
+.rb-layout-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Step Card */
+.rb-main-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 28px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.rb-card-header {
+  margin-bottom: 24px;
+}
+
+.rb-card-title {
+  font-size: 22px;
+  font-weight: 900;
+  color: #0F172A;
+  margin: 0 0 4px 0;
+}
+
+.rb-card-subtitle {
+  font-size: 13px;
+  color: #64748B;
+  margin: 0;
+}
+
+/* Step 1: Vehicle Selector Grid */
+.rb-vehicle-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.rb-vehicle-tile {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F0;
+  border-radius: 18px;
+  padding: 20px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rb-vehicle-tile:hover {
+  border-color: #A7F3D0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+.rb-vehicle-tile.selected {
+  border-color: #22C55E;
+  background: #F0FDF4;
+  box-shadow: 0 8px 24px rgba(34, 197, 94, 0.16);
+  transform: translateY(-2px);
+}
+
+.rb-vehicle-emoji {
+  font-size: 42px;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.rb-vehicle-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 2px 0;
+}
+
+.rb-vehicle-desc {
+  font-size: 12px;
+  color: #64748B;
+  margin: 0 0 10px 0;
+}
+
+.rb-vehicle-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #166534;
+  background: #DCFCE7;
+  padding: 3px 8px;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+/* Step 2: Battery Specs */
+.rb-specs-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.rb-spec-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rb-spec-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rb-pill-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.rb-pill-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.rb-spec-btn {
+  padding: 14px 10px;
+  border-radius: 14px;
+  border: 2px solid #E2E8F0;
+  background: #FFFFFF;
+  color: #334155;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.rb-spec-btn:hover {
+  border-color: #22C55E;
+  background: #F0FDF4;
+}
+
+.rb-spec-btn.active {
+  background: #22C55E;
+  border-color: #22C55E;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(34, 197, 94, 0.35);
+  transform: translateY(-1px);
+}
+
+.rb-spec-btn-sub {
+  font-size: 10px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+/* Step 3: Location */
+.rb-location-box {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #E2E8F0;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.rb-location-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  border-radius: 16px;
+  padding: 16px 20px;
+}
+
+.rb-location-addr h4 {
+  font-size: 14px;
+  font-weight: 800;
+  color: #14532D;
+  margin: 0 0 2px 0;
+}
+
+.rb-location-addr p {
+  font-size: 12px;
+  color: #166534;
+  margin: 0;
+}
+
+/* Step 4: Confirm */
+.rb-confirm-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rb-confirm-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+}
+
+.rb-confirm-icon {
+  font-size: 24px;
+  width: 36px;
+  text-align: center;
+}
+
+.rb-confirm-info {
+  flex: 1;
+}
+
+.rb-confirm-info p:first-child {
+  font-size: 11px;
+  color: #64748B;
+  font-weight: 600;
+  margin: 0;
+}
+
+.rb-confirm-info p:last-child {
+  font-size: 14px;
+  color: #0F172A;
+  font-weight: 800;
+  margin: 2px 0 0 0;
+}
+
+/* ── Sidebar Summary ── */
+.rb-sidebar-col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: sticky;
+  top: 90px;
+}
+
+.rb-summary-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 22px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.rb-summary-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 16px 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.rb-summary-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.rb-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.rb-summary-row span:first-child {
+  color: #64748B;
+}
+
+.rb-summary-row span:last-child {
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.rb-summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 2px dashed #E2E8F0;
+  margin-top: 8px;
+}
+
+.rb-total-label {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+.rb-total-price {
+  font-size: 22px;
+  font-weight: 900;
+  color: #16A34A;
+}
+
+/* Nearest Partner Banner */
+.rb-partner-banner {
+  background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
+  border: 1px solid #86EFAC;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.rb-partner-banner-header {
+  font-size: 12px;
+  font-weight: 800;
+  color: #14532D;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 6px 0;
+}
+
+.rb-partner-banner-name {
+  font-size: 15px;
+  font-weight: 800;
+  color: #064E3B;
+  margin: 0 0 2px 0;
+}
+
+.rb-partner-banner-sub {
+  font-size: 12px;
+  color: #047857;
+  margin: 0;
+}
+
+/* Action button */
+.rb-continue-btn {
+  width: 100%;
+  height: 50px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+  color: white;
+  border: none;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 8px 20px -4px rgba(34, 197, 94, 0.4);
+  transition: all 0.2s ease;
+}
+
+.rb-continue-btn:hover {
+  background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
+  box-shadow: 0 10px 24px -4px rgba(34, 197, 94, 0.5);
+  transform: translateY(-1px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .rb-layout-grid {
+    grid-template-columns: 1fr;
+  }
+  .rb-sidebar-col {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .rb-stepper-header {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+  .rb-main-card {
+    padding: 20px 16px;
+  }
+  .rb-card-title {
+    font-size: 20px;
+  }
+  .rb-vehicle-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .rb-pill-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .rb-stepper-title {
+    font-size: 13px;
+  }
+  .rb-main-card {
+    padding: 18px 14px;
+  }
+  .rb-pill-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .rb-confirm-row {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+  .rb-summary-card {
+    padding: 18px 14px;
+  }
+  .rb-location-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px;
+  }
+}
